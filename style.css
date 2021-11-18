@@ -1,0 +1,77 @@
+/* balises */
+body {
+    background-color: #b4d2eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+h2  {
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+li  {
+
+    border:springgreen 1px solid;
+    text-align: center;
+    margin: 0 10px;
+}
+
+input {
+    text-align: center;
+    color: blue;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 140px;
+}
+
+
+/* Ids */
+#accueil {
+    width: 50%;
+    display: flex;
+    margin: 10px 0;
+}
+
+#rules {
+    background-color: floralwhite;
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    border: indigo 2px solid;
+}
+
+#podium {
+    background-color: black;
+
+    color: white;
+    width: 50%;
+    text-align: left;
+}
+
+
+#newDivstyle {
+    color: black;
+    background-color: rgb(235, 236, 131);
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+    border: 1px solid rgb(0, 0, 0);
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: verdana;
+    font-weight: bold;
+    text-align: center;
+}
+
+#start {
+    margin: auto;
+}
