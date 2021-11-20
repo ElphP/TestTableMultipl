@@ -123,12 +123,17 @@ function valid() {
         
   }
     else alert("Dommage tu n'es pas arrivé sur le podium, retente ta chance!");
-   
 
+    //désactivation du btn valider
+    this.disabled = true;
+
+    //création du bouton nouvelle partie
    var btn2 = document.createElement("button");
    var text3 = document.createElement("span");
-   text3.innerHTML = "Nouvelle partie";
-   document.body.appendChild(btn2);
+   text3.innerHTML = "Nouvelle partie"; 
+   var divrules = document.getElementById("rules");
+   divrules.removeChild(divrules.firstChild);
+   divrules.appendChild(btn2);
    btn2.appendChild(text3);
 
    btn2.addEventListener("click", ()=> {
