@@ -125,12 +125,17 @@ function valid() {
     else alert("Dommage tu n'es pas arrivé sur le podium, retente ta chance!");
    
 
-//    var btn2 = document.createElement("button");
-//    btn2.onclick = history.go(0);
-//    var text3 = document.createElement("span");
-//    text3.innerHTML = "Nouvelle partie";
-//    document.body.appendChild(btn2);
-//    btn2.appendChild(text3);
+   var btn2 = document.createElement("button");
+   var text3 = document.createElement("span");
+   text3.innerHTML = "Nouvelle partie";
+   document.body.appendChild(btn2);
+   btn2.appendChild(text3);
+
+   btn2.addEventListener("click", ()=> {
+       history.go(0);
+   })
+   
+   
    
 
    
