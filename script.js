@@ -27,13 +27,14 @@ function affichage() {
         newDiv.appendChild(formul);
     }
 
-    // bouton valider et vidage du div "rules"
+    // bouton valider  et vidage du div "rules"
     var btn1 = document.createElement("button");
     btn1.onclick = valid;
     var text2 = document.createElement("span");
     text2.innerHTML = "Valider";
     document.body.appendChild(btn1);
     btn1.appendChild(text2);
+
 
     var divrules = document.getElementById("rules");
     while (divrules.firstChild) {
@@ -44,8 +45,8 @@ function affichage() {
     time = setInterval(chrono, 1000);
 
     function chrono() {
-        divrules.innerHTML = "Temps écoulé: " + sec + " secondes";
         sec++;
+        divrules.innerHTML = "Temps écoulé: " + sec + " secondes";
     }
 }
 
@@ -123,10 +124,18 @@ function valid() {
   }
     else alert("Dommage tu n'es pas arrivé sur le podium, retente ta chance!");
    
+
+//    var btn2 = document.createElement("button");
+//    btn2.onclick = history.go(0);
+//    var text3 = document.createElement("span");
+//    text3.innerHTML = "Nouvelle partie";
+//    document.body.appendChild(btn2);
+//    btn2.appendChild(text3);
    
-    var rejouer = confirm("Veux-tu rejouer?");
-     if (rejouer) history.go(0); 
+
+   
 }
+
 
 function erase() {
     localStorage.removeItem("tps1");
@@ -137,3 +146,5 @@ function erase() {
     localStorage.removeItem("nom3");
     history.go(0);
 }
+
+
