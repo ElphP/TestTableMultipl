@@ -35,7 +35,6 @@ function affichage() {
     document.body.appendChild(btn1);
     btn1.appendChild(text2);
 
-
     var divrules = document.getElementById("rules");
     while (divrules.firstChild) {
         divrules.removeChild(divrules.firstChild);
@@ -62,33 +61,24 @@ function valid() {
             fautes++;
         } else div[j].style.backgroundColor = "lightgreen";
     }
-    if (fautes == 0) {
-        alert("Bravo, tu es un champion!!! 0 fautes!!! \n Tu as mis " + sec + " secondes");
-    } else if (fautes != 0 && fautes <= 2) {
-        alert(
-            "Mouais... Aloys tu as fait \n" +
-                fautes +
-                " fautes en " +
-                sec +
-                " secondes, \ntu peux mieux faire...."
-        );
-    } else {
-        alert(
-            "Arghhh, Aloys tu as fais trop de fautes !\n (Tu as fait " +
-                fautes +
-                " fautes en " +
-                sec +
-                " secondes). \n Entraine-toi encore.... Courage!"
-        );
-    }
 
+    var textresult2 = "";
+    
     // pénalités pour fautes
-    sec = sec + fautes * 3;
+    secpenalite = sec + fautes * 3;
 
     // entrée des scores si dans le top 3
-    if (localStorage.tps3 == undefined || localStorage.tps3 == 'undefined' || sec <= localStorage.tps3) {
+    if (
+        localStorage.tps3 == undefined ||
+        localStorage.tps3 == "undefined" ||
+        secpenalite <= localStorage.tps3
+    ) {
         // test place1
-        if (localStorage.tps1 == 'undefined'|| localStorage.tps1 == undefined || sec <= localStorage.tps1 ) {
+        if (
+            localStorage.tps1 == "undefined" ||
+            localStorage.tps1 == undefined ||
+            secpenalite <= localStorage.tps1
+        ) {
             localStorage.setItem("tps3", localStorage.tps2);
             localStorage.setItem("nom3", localStorage.nom2);
             localStorage.setItem("tps2", localStorage.tps1);
@@ -97,55 +87,84 @@ function valid() {
                 "nom1",
                 prompt("Indique ton nom ou un pseudo: ")
             );
-            localStorage.setItem("tps1", sec);
-            
+            localStorage.setItem("tps1", secpenalite);
         }
         // test place2
-        else if (localStorage.tps2 == undefined || localStorage.tps2 == 'undefined' || sec <= localStorage.tps2) {
+        else if (
+            localStorage.tps2 == undefined ||
+            localStorage.tps2 == "undefined" ||
+            secpenalite <= localStorage.tps2
+        ) {
             localStorage.setItem("tps3", localStorage.tps2);
             localStorage.setItem("nom3", localStorage.nom2);
-            localStorage.setItem("tps2", sec);
+            localStorage.setItem("tps2", secpenalite);
             localStorage.setItem(
                 "nom2",
                 prompt("Indique ton nom ou un pseudo: ")
             );
         }
         // sinon place3
-        else  {
-            localStorage.setItem("tps3", sec);
+        else {
+            localStorage.setItem("tps3", secpenalite);
             localStorage.setItem(
                 "nom3",
                 prompt("Indique ton nom ou un pseudo: ")
             );
         }
-        
-          
-        
-  }
-    else alert("Dommage tu n'es pas arrivé sur le podium, retente ta chance!");
+    } else
+        var textresult2 =
+            "Dommage tu n'as pas réussi à monter sur le podium, entraîne-toi encore pour aller plus vite! ";
+
+    var textresult = "";
+    if (fautes == 0) {
+        textresult =
+            "Tu es un champion!!! 0 fautes!!!  Tu as mis " + sec + " secondes.";
+    } else if (fautes != 0 && fautes <= 2) {
+        textresult =
+            "Tu as fait " +
+            fautes +
+            " faute(s) en " +
+            sec +
+            " secondes, tu peux mieux faire....";
+    } else {
+        textresult =
+            "Tu as fais trop de fautes ! (Tu as fait " +
+            fautes +
+            " fautes en " +
+            sec +
+            " secondes).  Entraine-toi encore.... Courage!";
+    }
+
+    if (textresult2 == "") {
+        textresult2 += "Bravo tu viens d'inscrire ton nom sur le podium!!!";
+    }
+
+    var divrules = document.querySelector("#rules");
+    divrules.style.backgroundColor = "#0000A3";
+    divrules.style.color = "lightgreen";
+    var text4 = document.createElement("span");
+    text4.innerHTML = textresult + "<br />" + "<br />";
+    var text5 = document.createElement("span");
+    text5.innerHTML = textresult2 + "<br />";
+    divrules.appendChild(text4);
+    divrules.appendChild(text5);
 
     //désactivation du btn valider
     this.disabled = true;
 
     //création du bouton nouvelle partie
-   var btn2 = document.createElement("button");
-   var text3 = document.createElement("span");
-   text3.innerHTML = "Nouvelle partie"; 
-   var divrules = document.getElementById("rules");
-   divrules.removeChild(divrules.firstChild);
-   divrules.appendChild(btn2);
-   btn2.appendChild(text3);
+    var btn2 = document.createElement("button");
+    var text3 = document.createElement("span");
+    text3.innerHTML = "Nouvelle partie";
 
-   btn2.addEventListener("click", ()=> {
-       history.go(0);
-   })
-   
-   
-   
+    divrules.removeChild(divrules.firstChild);
+    divrules.appendChild(btn2);
+    btn2.appendChild(text3);
 
-   
+    btn2.addEventListener("click", () => {
+        history.go(0);
+    });
 }
-
 
 function erase() {
     localStorage.removeItem("tps1");
@@ -156,5 +175,3 @@ function erase() {
     localStorage.removeItem("nom3");
     history.go(0);
 }
-
-
