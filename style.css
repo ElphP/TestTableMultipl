@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+   
 }
 h1 {
     font-size: 45px;
@@ -21,12 +22,14 @@ button {
     border-radius: 5%;
     margin-top: 10px;
     background-color: whitesmoke;
+    cursor: pointer;
 }
 
 li {
     border: springgreen 1px solid;
     text-align: center;
-    margin: 0 10px;
+    margin: 5px;
+    padding: 5px 20px;
 }
 
 input {
@@ -39,7 +42,7 @@ input {
 
 /* Ids */
 #accueil {
-    width: 50%;
+    width: 40%;
     display: flex;
     margin: 10px 0;
 }
@@ -83,7 +86,10 @@ input {
     background-color: black;
     color: white;
     width: 50%;
-    text-align: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
 
 #newDivstyle {

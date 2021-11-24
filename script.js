@@ -113,7 +113,7 @@ function valid() {
         }
     } else
         var textresult2 =
-            "Dommage tu n'as pas réussi à monter sur le podium, entraîne-toi encore pour aller plus vite! ";
+            "Dommage tu n'as pas réussi à monter sur le podium, entraîne-toi encore et encore pour aller plus vite! ";
 
     var textresult = "";
     if (fautes == 0) {
@@ -136,10 +136,11 @@ function valid() {
     }
 
     if (textresult2 == "") {
-        textresult2 += "Bravo tu viens d'inscrire ton nom sur le podium!!!";
+        textresult2 += "Bravo, tu viens d'inscrire ton nom sur le podium!!!";
     }
 
     var divrules = document.querySelector("#rules");
+    divrules.style.alignItems = "flex-start";
     if (fautes == 0) {
         divrules.style.backgroundColor = "#0000A3";
         divrules.style.color = "lightgreen";
