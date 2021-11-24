@@ -63,7 +63,7 @@ function valid() {
     }
 
     var textresult2 = "";
-    
+
     // pénalités pour fautes
     secpenalite = sec + fautes * 3;
 
@@ -140,8 +140,13 @@ function valid() {
     }
 
     var divrules = document.querySelector("#rules");
-    divrules.style.backgroundColor = "#0000A3";
-    divrules.style.color = "lightgreen";
+    if (fautes == 0) {
+        divrules.style.backgroundColor = "#0000A3";
+        divrules.style.color = "lightgreen";
+    } else {
+        divrules.style.backgroundColor = "red";
+        divrules.style.color = "#f5ff31";
+    }
     var text4 = document.createElement("span");
     text4.innerHTML = textresult + "<br />" + "<br />";
     var text5 = document.createElement("span");

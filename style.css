@@ -1,4 +1,6 @@
 /* balises */
+
+
 body {
     background-color: #b4d2eb;
     display: flex;
@@ -9,19 +11,20 @@ h1 {
     font-size: 45px;
     color: rgb(0, 0, 0);
     font-family: sans-serif;
-    
 }
-h2  {
+h2 {
     text-align: center;
 }
 
 button {
-    margin-top: 20px;
     font-size: 1.2rem;
+    border-radius: 5%;
+    margin-top: 10px;
+    background-color: whitesmoke;
 }
-li  {
 
-    border:springgreen 1px solid;
+li {
+    border: springgreen 1px solid;
     text-align: center;
     margin: 0 10px;
 }
@@ -34,7 +37,6 @@ input {
     width: 140px;
 }
 
-
 /* Ids */
 #accueil {
     width: 50%;
@@ -43,23 +45,46 @@ input {
 }
 
 #rules {
-    background-color: white;
+    background-color:papayawhip;
     width: 50%;
     padding: 10px;
     text-align: left;
     border: indigo 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    font-weight: bold;
 }
 
+#start {
+    border-radius: 25%;
+    width: 60px;
+    height: 40px;
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin-top: 15px; 
+}
 
+@keyframes pulse  {
+    0%  {
+        box-shadow: 0 0 2px  blue;
+    }
+    50%{
+        box-shadow: 0 0 0 6px blue;
+    }
+    100%{
+        box-shadow: 0 0 2px  blue;
+    }
+}
 
 #podium {
     background-color: black;
-
     color: white;
     width: 50%;
     text-align: left;
 }
-
 
 #newDivstyle {
     color: black;
@@ -75,6 +100,4 @@ input {
     text-align: center;
 }
 
-#start {
-    margin: auto;
-}
+
