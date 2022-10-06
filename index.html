@@ -6,16 +6,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tables de multiplications</title>
         <link rel="stylesheet" href="style.css" />
+         <meta name="robots" content="noindex,nofollow">
     </head>
     <body>
         <h1>Test sur les tables de multiplications</h1>
 
         <div id="accueil">
             <div id="rules">
-                Ce programme est un petit jeu sur les multiplications. <br />
+                Ce programme est un petit test sur les multiplications. <br />
                 Pour rentrer les réponses plus vite, aide-toi de la touche "TAB"
-                . Pour chaque réponse fausse tu perds 3 secondes de temps. A toi
-                d'aller le plus vite possible sans faire de fautes!
+                .  <br /> A toi
+                d'aller le plus vite possible sans faire de fautes! (Pour chaque erreur, tu auras une pénalité de 3 secondes sur ton temps pour le podium)
                 <button onclick="affichage()" id="start">Start!</button> <br />
                 <button onclick="erase()">Effacer le podium</button>
             </div>
@@ -28,6 +29,7 @@
                 </ol>
             </div>
         </div>
+        <div id="test"></div>
         <script src="script.js"></script>
     </body>
 </html>

@@ -1,16 +1,14 @@
 /* balises */
 
-
 body {
-    background-color: #b4d2eb;
+    background-color: #222222;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
 }
 h1 {
     font-size: 45px;
-    color: rgb(0, 0, 0);
+    color: whitesmoke;
     font-family: sans-serif;
 }
 h2 {
@@ -34,7 +32,7 @@ li {
 
 input {
     text-align: center;
-    color: blue;
+    color: rgb(56, 56, 217);
     font-size: 1.2rem;
     font-weight: bold;
     width: 140px;
@@ -42,20 +40,28 @@ input {
 
 /* Ids */
 #accueil {
-    width: 40%;
+    width: 60vw;
+    height: auto;
     display: flex;
+    justify-content: center;
+    align-items: stretch;
     margin: 10px 0;
+    position: relative;
 }
 
 #rules {
-    background-color:papayawhip;
-    width: 50%;
+    background-color: rgb(223, 203, 171);
+    width: 60%;
+    height: 100%;
     padding: 10px;
     text-align: left;
-    border: indigo 2px solid;
+    font-size: 1.3rem;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    justify-content: space-evenly;
+    align-items: center;
     font-weight: bold;
 }
 
@@ -67,43 +73,54 @@ input {
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    margin-top: 15px; 
 }
 
-@keyframes pulse  {
-    0%  {
-        box-shadow: 0 0 2px  blue;
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 2px rgb(56, 56, 217);
     }
-    50%{
-        box-shadow: 0 0 0 6px blue;
+    50% {
+        box-shadow: 0 0 0 6px rgb(56, 56, 217);
     }
-    100%{
-        box-shadow: 0 0 2px  blue;
+    100% {
+        box-shadow: 0 0 2px rgb(56, 56, 217);
     }
 }
 
 #podium {
     background-color: black;
     color: white;
-    width: 50%;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 40%;
+    padding: 10px;
+}
+
+#test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    flex-wrap: wrap;
+    padding-top: 80px;
 }
 
 #newDivstyle {
+    display: inline;
     color: black;
-    background-color: rgb(235, 236, 131);
+    background-color: rgb(211, 212, 134);
     width: 200px;
     height: 60px;
     border-radius: 15px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 3px solid rgb(138, 60, 15);
     padding-top: 5px;
+    margin: 5px;
     font-size: 20px;
     font-family: verdana;
     font-weight: bold;
     text-align: center;
 }
-
-

@@ -1,3 +1,5 @@
+// création de la table des résultats
+
 document.getElementById("first").innerHTML =
     localStorage.nom1 + " - " + localStorage.tps1 + " secondes";
 document.getElementById("second").innerHTML =
@@ -10,6 +12,7 @@ var sec = 0;
 
 function affichage() {
     //  création des tables
+   
     for (i = 0; i < 10; i++) {
         var a = Math.floor(Math.random() * 12);
         var b = Math.floor(Math.random() * 12);
@@ -22,7 +25,7 @@ function affichage() {
         var formul = document.createElement("span");
         formul.innerHTML = `<input type=text id=ind${i} placeHolder=résultat>`;
 
-        document.body.appendChild(newDiv);
+        document.getElementById("test").appendChild(newDiv);
         newDiv.appendChild(text1);
         newDiv.appendChild(formul);
     }
@@ -125,7 +128,7 @@ function valid() {
             fautes +
             " faute(s) en " +
             sec +
-            " secondes, tu peux mieux faire....";
+            " secondes,c'est pas mal mais tu peux faire mieux....";
     } else {
         textresult =
             "Tu as fais trop de fautes ! (Tu as fait " +
@@ -136,14 +139,14 @@ function valid() {
     }
 
     if (textresult2 == "") {
-        textresult2 += "Bravo, tu viens d'inscrire ton nom sur le podium!!!";
+        textresult2 += "Tu viens d'inscrire ton nom sur le podium!!!";
     }
 
     var divrules = document.querySelector("#rules");
     divrules.style.alignItems = "flex-start";
     if (fautes == 0) {
-        divrules.style.backgroundColor = "#0000A3";
-        divrules.style.color = "lightgreen";
+        divrules.style.backgroundColor = "#292BFF";
+        divrules.style.color = "white";
     } else {
         divrules.style.backgroundColor = "red";
         divrules.style.color = "#f5ff31";
