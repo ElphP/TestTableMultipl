@@ -124,3 +124,15 @@ input {
     font-weight: bold;
     text-align: center;
 }
+
+
+@media screen and (max-width: 800px)  {
+    #accueil  {
+        flex-direction: column;
+        width: 100%;
+    }
+    #rules, #podium  {
+  width:95%;
+  margin: auto;
+    }
+}
