@@ -1,1 +1,3 @@
 # TestTableMultipl
+J'ai codé ce petit programme afin d'aider mon fils à apprendre ses tables de multiplications.
+Mon record personnel est de 13 secondes... 
